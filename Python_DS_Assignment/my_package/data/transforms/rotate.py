@@ -1,4 +1,4 @@
-#Imports
+import PIL
 
 
 class RotateImage(object):
@@ -12,7 +12,7 @@ class RotateImage(object):
             degrees: rotation degree.
         '''
         
-        # Write your code here
+        self.degrees = degrees
 
     def __call__(self, sample):
         '''
@@ -23,4 +23,4 @@ class RotateImage(object):
             image (numpy array or PIL image)
         '''
 
-        # Write your code here
+        return sample.rotate(self.degrees)

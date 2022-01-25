@@ -1,5 +1,4 @@
-#Imports
-
+import PIL
 
 class CropImage(object):
     '''
@@ -13,7 +12,8 @@ class CropImage(object):
             crop_type: center crop or random crop. Default: center
         '''
 
-        # Write your code here
+        self.shape = shape
+        self.crop_type = crop_type
 
     def __call__(self, image):
         '''
@@ -23,9 +23,12 @@ class CropImage(object):
             Returns:
             image (numpy array or PIL image)
         '''
-
-        # Write your code here
-
+        if(self.crop_type == 'center'):
+            h, w = self.shape
+            w0, h0 = image.size
+            return image.crop((int(w0/2 - w/2), int(h0/2 - h/2), int(w0/2 + w/2), int(h0/2 + h/2)))
+        elif(self.crop_type == 'random'):
+            pass
         
 
  
