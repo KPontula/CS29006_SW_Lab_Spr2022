@@ -1,4 +1,5 @@
 import PIL
+from random import randrange
 
 class CropImage(object):
     '''
@@ -23,12 +24,14 @@ class CropImage(object):
             Returns:
             image (numpy array or PIL image)
         '''
+        h, w = self.shape
+        W, H = image.size
         if(self.crop_type == 'center'):
-            h, w = self.shape
-            w0, h0 = image.size
-            return image.crop((int(w0/2 - w/2), int(h0/2 - h/2), int(w0/2 + w/2), int(h0/2 + h/2)))
+            return image.crop((int(W/2 - w/2), int(H/2 - h/2), int(W/2 + w/2), int(H/2 + h/2)))
         elif(self.crop_type == 'random'):
-            pass
+            x = randrange(int(W/2 - w/2), int(W/2 + w/2))
+            y = randrange(int(H/2 - h/2), int(H/2 + h/2))
+            return image.crop((int(x - w/2), int(y - h/2), int(x + w/2), int(y + h/2)))
         
 
  

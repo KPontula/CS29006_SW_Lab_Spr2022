@@ -57,8 +57,8 @@ def main():
     # Rescale Image
     # img2 = (RescaleImage(200))(img)
 
-    #Crop Image
-    img2 = (CropImage((100,300),'center'))(img)
+    # Crop Image
+    img2 = (CropImage((100,300),'random'))(img)
     img2.show()
 
 if __name__ == '__main__':
