@@ -2,15 +2,9 @@
 # from my_package.model import InstanceSegmentationModel
 # from my_package.data import Dataset
 # from my_package.analysis import plot_visualization
-# from my_package.data.transforms import FlipImage, RescaleImage, BlurImage, CropImage, RotateImage
+from my_package.data.transforms import FlipImage, RescaleImage, BlurImage, CropImage, RotateImage
 # import numpy as np
 from PIL import Image
-
-from my_package.data.transforms.blur import BlurImage
-from my_package.data.transforms.flip import FlipImage
-from my_package.data.transforms.rotate import RotateImage
-from my_package.data.transforms.rescale import RescaleImage
-from my_package.data.transforms.crop import CropImage
 
 def experiment(annotation_file, segmentor, transforms, outputs):
     '''
